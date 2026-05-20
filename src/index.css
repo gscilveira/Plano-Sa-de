@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-wellness-charcoal: #06110D;
+  --color-wellness-green: #059669;
+  --color-wellness-gray: #0C1A16;
+}
+
+@layer base {
+  body {
+    @apply bg-wellness-charcoal text-white font-sans antialiased transition-colors duration-500;
+  }
+}
+
+.light-mode {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  --color-wellness-charcoal: #FFFFFF;
+  --color-wellness-gray: #F8F8F8;
+  --color-wellness-green: #059669; /* Darker green for light mode */
+}
+
+.light-mode .wellness-gradient {
+  background: none !important;
+}
+
+.light-mode .glass-card {
+  @apply bg-[#FDFDFD] border-[#EEEEEE] shadow-xl text-black;
+}
+
+.light-mode nav {
+  @apply bg-white/90 border-black/10 shadow-sm;
+}
+
+.light-mode .mix-blend-difference {
+  mix-blend-mode: normal !important;
+  @apply text-black;
+}
+
+.light-mode .mix-blend-difference * {
+  @apply text-black;
+}
+
+.light-mode input {
+  @apply bg-black/5 border-black/10 text-black;
+}
+
+.light-mode body {
+  @apply bg-white;
+}
+
+.wellness-gradient {
+  background: radial-gradient(circle at 10% 20%, rgba(198, 255, 0, 0.05) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(198, 255, 0, 0.03) 0%, transparent 40%);
+}
+
+.glass-card {
+  @apply bg-wellness-gray/40 border border-white/10 backdrop-blur-md;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full;
+}
