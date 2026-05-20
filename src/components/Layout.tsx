@@ -13,27 +13,27 @@ export default function Layout({ children, isLightMode }: { children: ReactNode,
         </>
       )}
       
-      <nav className={`relative z-10 border-b ${isLightMode ? 'border-black/5 bg-white' : 'border-white/5 bg-wellness-charcoal/50'} backdrop-blur-xl px-4 md:px-6 py-4 transition-colors`}>
+      <nav className={`relative z-10 border-b ${isLightMode ? 'border-black/5 bg-white' : 'border-white/5 bg-wellness-charcoal/50'} backdrop-blur-xl px-6 py-4 transition-colors`}>
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-2 group cursor-pointer" onClick={() => window.location.reload()}>
             <div className="w-8 h-8 rounded-lg bg-wellness-green flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
               <Activity className="text-black w-5 h-5" />
             </div>
-            <span className={`font-bold text-lg md:text-xl tracking-tighter uppercase ${isLightMode ? 'text-black' : 'text-white'}`}>Plano<span className="text-wellness-green">&</span>Saúde</span>
+            <span className={`font-bold text-xl tracking-tighter uppercase ${isLightMode ? 'text-black' : 'text-white'}`}>Plano<span className="text-wellness-green">&</span>Saúde</span>
           </div>
-
+          
           <div className={`hidden md:flex gap-8 text-[10px] font-bold tracking-[0.2em] uppercase ${isLightMode ? 'text-black/40' : 'text-white/40'}`}>
              <span>Monte seu plano perfeito v3.0</span>
           </div>
-
-          <div className="flex items-center gap-2 md:gap-4">
+          
+          <div className="flex items-center gap-4">
              <div className="w-2 h-2 rounded-full bg-wellness-green animate-pulse" />
-             <span className="hidden sm:block text-[10px] font-bold tracking-widest text-wellness-green">PROTOCOLO ATIVO</span>
+             <span className="text-[10px] font-bold tracking-widest text-wellness-green">PROTOCOLO ATIVO</span>
           </div>
         </div>
       </nav>
-
-      <main className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-12 min-h-[calc(100vh-80px)]">
+      
+      <main className="relative z-10 max-w-7xl mx-auto px-6 py-12 min-h-[calc(100vh-80px)]">
         {children}
       </main>
       

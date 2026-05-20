@@ -54,7 +54,7 @@ export default function OnboardingForm({ onSubmit, loading, isLightMode }: FormP
                   <button
                     key={g}
                     onClick={() => updateField('gender', g)}
-                    className={`px-5 md:px-8 py-3 rounded-full text-[10px] font-bold tracking-widest border transition-all ${
+                    className={`px-8 py-3 rounded-full text-[10px] font-bold tracking-widest border transition-all ${
                       formData.gender === g 
                       ? 'bg-wellness-green text-black border-wellness-green' 
                       : `hover:border-wellness-green/30 ${isLightMode ? 'bg-black/5 border-black/10 text-black/40' : 'bg-white/5 border-white/10 text-white/40'}`
@@ -114,13 +114,13 @@ export default function OnboardingForm({ onSubmit, loading, isLightMode }: FormP
                 <button
                   key={obj}
                   onClick={() => updateField('objective', obj)}
-                  className={`p-5 md:p-8 rounded-[24px] md:rounded-[32px] border text-center transition-all group ${
+                  className={`p-8 rounded-[32px] border text-center transition-all group ${
                     formData.objective === obj 
                     ? 'bg-wellness-green border-wellness-green text-black scale-[1.02] shadow-xl' 
                     : `hover:border-wellness-green/30 ${isLightMode ? 'bg-black/5 border-black/10' : 'bg-white/5 border-white/10'}`
                   }`}
                 >
-                  <h3 className="font-bold text-sm md:text-lg tracking-widest uppercase italic">{obj}</h3>
+                  <h3 className="font-bold text-lg tracking-widest uppercase italic">{obj}</h3>
                 </button>
               ))}
             </motion.div>

@@ -2,5 +2,5 @@
   "name": "Plano&Saúde",
   "description": "Plataforma de bio-hacking e nutrição personalizada com estética wellness moderna.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["AI-powered fitness & diet planning"]
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
