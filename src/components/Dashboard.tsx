@@ -109,36 +109,36 @@ export default function Dashboard({
             className="space-y-6"
           >
             <div className="flex flex-col gap-2">
-              <h2 className={`text-5xl md:text-7xl font-bold tracking-tighter uppercase italic leading-none ${isLightMode ? 'text-black' : 'text-white'}`}>
+              <h2 className={`text-3xl md:text-7xl font-bold tracking-tighter uppercase italic leading-none ${isLightMode ? 'text-black' : 'text-white'}`}>
                 {plan.biotype}
               </h2>
               <p className="text-wellness-green text-xs tracking-[0.4em] font-black uppercase">Bio-Algoritmo Detectado</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-               <div className="glass-card p-8 rounded-[32px] border-wellness-green/10 flex flex-col justify-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+               <div className="glass-card p-4 md:p-8 rounded-[20px] md:rounded-[32px] border-wellness-green/10 flex flex-col justify-center">
                   <div className={`text-[10px] uppercase font-black tracking-widest mb-1 ${isLightMode ? 'text-black/30' : 'text-white/30'}`}>IMC</div>
-                  <div className="text-4xl font-mono text-wellness-green">{Math.floor(plan.imc)}</div>
+                  <div className="text-3xl md:text-4xl font-mono text-wellness-green">{Math.floor(plan.imc)}</div>
                </div>
-               <div className="glass-card p-8 rounded-[32px] border-wellness-green/10 flex flex-col justify-center">
+               <div className="glass-card p-4 md:p-8 rounded-[20px] md:rounded-[32px] border-wellness-green/10 flex flex-col justify-center">
                   <div className={`text-[10px] uppercase font-black tracking-widest mb-1 ${isLightMode ? 'text-black/30' : 'text-white/30'}`}>Meta Kcal</div>
-                  <div className="text-4xl font-mono text-wellness-green">{Math.floor(plan.dailyCalories)}</div>
+                  <div className="text-3xl md:text-4xl font-mono text-wellness-green">{Math.floor(plan.dailyCalories)}</div>
                </div>
-               <div className={`glass-card p-8 rounded-[32px] flex flex-col justify-center ${isLightMode ? 'border-black/5' : 'border-white/5'}`}>
+               <div className={`glass-card p-4 md:p-8 rounded-[20px] md:rounded-[32px] flex flex-col justify-center ${isLightMode ? 'border-black/5' : 'border-white/5'}`}>
                   <div className={`text-[10px] uppercase font-black tracking-widest mb-1 ${isLightMode ? 'text-black/30' : 'text-white/30'}`}>Gasto (TDEE)</div>
-                  <div className="text-4xl font-mono">{Math.floor(plan.tdee)}</div>
+                  <div className="text-3xl md:text-4xl font-mono">{Math.floor(plan.tdee)}</div>
                </div>
-               <div className={`glass-card p-8 rounded-[32px] flex flex-col justify-center ${isLightMode ? 'border-black/5' : 'border-white/5'}`}>
+               <div className={`glass-card p-4 md:p-8 rounded-[20px] md:rounded-[32px] flex flex-col justify-center ${isLightMode ? 'border-black/5' : 'border-white/5'}`}>
                   <div className={`text-[10px] uppercase font-black tracking-widest mb-1 ${isLightMode ? 'text-black/30' : 'text-white/30'}`}>Base (TMB)</div>
-                  <div className="text-4xl font-mono">{Math.floor(plan.tmb)}</div>
+                  <div className="text-3xl md:text-4xl font-mono">{Math.floor(plan.tmb)}</div>
                </div>
             </div>
 
-            <div className="glass-card p-10 rounded-[40px] border-wellness-green/20 relative overflow-hidden">
-               <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div className="glass-card p-5 md:p-10 rounded-[24px] md:rounded-[40px] border-wellness-green/20 relative overflow-hidden">
+               <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-5 md:gap-8">
                   <div className="space-y-2 text-center md:text-left">
                      <div className="text-[10px] text-wellness-green font-black uppercase tracking-[0.3em]">Meta de Consistência</div>
-                     <h3 className="text-4xl font-bold italic tracking-tighter uppercase">Protocolo de Treino</h3>
+                     <h3 className="text-2xl md:text-4xl font-bold italic tracking-tighter uppercase">Protocolo de Treino</h3>
                      <p className={`text-sm font-medium ${isLightMode ? 'text-black/60' : 'text-white/40'}`}>Sua meta é de {trainingDaysGoal} sessões semanais para otimização máxima.</p>
                   </div>
                   <div className="flex items-center gap-8">
@@ -163,14 +163,14 @@ export default function Dashboard({
                <div className="absolute top-0 right-0 w-64 h-64 bg-wellness-green/5 blur-[80px] rounded-full translate-x-1/2 -translate-y-1/2" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-3 md:gap-4">
                {plan.macros.map((m, i) => (
-                 <div key={i} className={`glass-card p-8 rounded-[32px] ${isLightMode ? 'border-black/5' : 'border-white/5'}`}>
+                 <div key={i} className={`glass-card p-4 md:p-8 rounded-[20px] md:rounded-[32px] ${isLightMode ? 'border-black/5' : 'border-white/5'}`}>
                     <div className="flex justify-between items-center mb-4">
                        <span className={`text-[10px] uppercase font-black tracking-widest ${isLightMode ? 'text-black/20' : 'text-white/20'}`}>{m.name}</span>
                        <Zap className="w-3 h-3 text-wellness-green/30" />
                     </div>
-                    <div className="text-4xl font-mono">{Math.floor(m.value)}<small className={`text-xs ml-2 ${isLightMode ? 'text-black/30' : 'text-white/30'}`}>{m.unit}</small></div>
+                    <div className="text-2xl md:text-4xl font-mono">{Math.floor(m.value)}<small className={`text-xs ml-1 md:ml-2 ${isLightMode ? 'text-black/30' : 'text-white/30'}`}>{m.unit}</small></div>
                  </div>
                ))}
             </div>
@@ -182,26 +182,32 @@ export default function Dashboard({
             animate={{ opacity: 1, y: 0 }}
             className="space-y-8"
           >
-            <div className="flex items-center gap-4 px-4">
-               <div className="w-12 h-12 rounded-2xl bg-wellness-green/10 flex items-center justify-center">
-                  <Utensils className="text-wellness-green w-6 h-6" />
+            <div className="flex items-center gap-3 md:gap-4 px-2 md:px-4">
+               <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-wellness-green/10 flex items-center justify-center shrink-0">
+                  <Utensils className="text-wellness-green w-5 h-5 md:w-6 md:h-6" />
                </div>
-               <h2 className="text-4xl font-bold tracking-tighter uppercase italic">Protocolo Alimentar</h2>
+               <h2 className="text-2xl md:text-4xl font-bold tracking-tighter uppercase italic">Protocolo Alimentar</h2>
             </div>
-            
+
             <div className="grid grid-cols-1 gap-4">
                {plan.meals.map((meal, i) => (
-                 <div key={i} className={`glass-card p-10 rounded-[40px] flex flex-col md:flex-row md:items-center gap-10 hover:border-wellness-green/20 transition-all group ${isLightMode ? 'border-black/5' : 'border-white/5'}`}>
-                    <div className={`flex flex-col min-w-[120px] md:border-r ${isLightMode ? 'border-black/5' : 'border-white/5'}`}>
-                       <span className="text-xs font-mono text-wellness-green mb-1">{meal.time}</span>
-                       <span className={`text-2xl font-bold tracking-tighter uppercase group-hover:text-wellness-green transition-colors ${isLightMode ? 'text-black' : 'text-white'}`}>{meal.name}</span>
+                 <div key={i} className={`glass-card p-5 md:p-10 rounded-[24px] md:rounded-[40px] flex flex-col md:flex-row md:items-center gap-4 md:gap-10 hover:border-wellness-green/20 transition-all group ${isLightMode ? 'border-black/5' : 'border-white/5'}`}>
+                    <div className={`flex flex-row md:flex-col items-center md:items-start justify-between md:justify-start min-w-0 md:min-w-[120px] pb-3 md:pb-0 border-b md:border-b-0 md:border-r ${isLightMode ? 'border-black/5' : 'border-white/5'}`}>
+                       <div>
+                         <span className="text-xs font-mono text-wellness-green mb-1 block">{meal.time}</span>
+                         <span className={`text-lg md:text-2xl font-bold tracking-tighter uppercase group-hover:text-wellness-green transition-colors ${isLightMode ? 'text-black' : 'text-white'}`}>{meal.name}</span>
+                       </div>
+                       <div className="text-right md:hidden">
+                         <span className={`text-2xl font-mono font-bold block ${isLightMode ? 'text-black' : 'text-white'}`}>{meal.calories}</span>
+                         <span className={`text-[10px] uppercase font-black tracking-widest ${isLightMode ? 'text-black/20' : 'text-white/20'}`}>KCAL</span>
+                       </div>
                     </div>
-                    <div className="flex-1">
-                       <p className={`text-lg leading-relaxed font-medium ${isLightMode ? 'text-black/60' : 'text-white/50'}`}>
+                    <div className="flex-1 min-w-0">
+                       <p className={`text-sm md:text-lg leading-relaxed font-medium ${isLightMode ? 'text-black/60' : 'text-white/50'}`}>
                           {meal.foods.join(" / ")}
                        </p>
                     </div>
-                    <div className="text-right">
+                    <div className="hidden md:block text-right shrink-0">
                        <span className={`text-3xl font-mono font-bold block ${isLightMode ? 'text-black' : 'text-white'}`}>{meal.calories}</span>
                        <span className={`text-[10px] uppercase font-black tracking-widest ${isLightMode ? 'text-black/20' : 'text-white/20'}`}>KCALS EST.</span>
                     </div>
@@ -228,30 +234,30 @@ export default function Dashboard({
             </div>
 
             {/* Weekly Selector */}
-            <div className="grid grid-cols-7 gap-2">
+            <div className="grid grid-cols-7 gap-1 md:gap-2">
                {weekDays.map((day, i) => (
                  <button
                    key={i}
                     onClick={() => setSelectedDay(i)}
-                    className={`flex flex-col items-center gap-3 p-4 rounded-[24px] border transition-all duration-300 ${
-                      selectedDay === i 
-                      ? 'bg-wellness-green border-wellness-green text-black scale-105 shadow-xl' 
+                    className={`flex flex-col items-center gap-1 md:gap-3 p-2 md:p-4 rounded-[14px] md:rounded-[24px] border transition-all duration-300 ${
+                      selectedDay === i
+                      ? 'bg-wellness-green border-wellness-green text-black scale-105 shadow-xl'
                       : `glass-card text-white/30 ${isLightMode ? 'border-black/5 shadow-none hover:bg-black/5 transition-colors' : 'border-white/5'}`
                     }`}
                   >
-                    <span className={`text-[10px] font-black uppercase tracking-widest ${selectedDay === i ? 'text-black' : isLightMode ? 'text-black/30' : 'text-white/30'}`}>{day}</span>
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center border ${
+                    <span className={`text-[9px] md:text-[10px] font-black uppercase tracking-tight md:tracking-widest ${selectedDay === i ? 'text-black' : isLightMode ? 'text-black/30' : 'text-white/30'}`}>{day}</span>
+                    <div className={`w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center border ${
                       selectedDay === i ? 'bg-black border-black text-wellness-green' : isLightMode ? 'border-black/10 bg-black/5' : 'border-white/5 bg-white/5'
                     }`}>
-                       {checkedDays.includes(i) ? <CheckCircle2 className="w-4 h-4" /> : <div className={`w-1.5 h-1.5 rounded-full ${isLightMode ? 'bg-black/10' : 'bg-white/10'}`} />}
+                       {checkedDays.includes(i) ? <CheckCircle2 className="w-3 h-3 md:w-4 md:h-4" /> : <div className={`w-1.5 h-1.5 rounded-full ${isLightMode ? 'bg-black/10' : 'bg-white/10'}`} />}
                     </div>
                   </button>
                ))}
             </div>
 
             {/* Workout Details */}
-            <div className={`glass-card p-10 rounded-[48px] ${isLightMode ? 'border-black/5' : 'border-white/5'}`}>
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
+            <div className={`glass-card p-4 md:p-10 rounded-[24px] md:rounded-[48px] ${isLightMode ? 'border-black/5' : 'border-white/5'}`}>
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-6 mb-6 md:mb-12">
                    <div>
                       <h3 className={`text-3xl font-bold tracking-tight italic uppercase ${isLightMode ? 'text-black' : 'text-white'}`}>{plan.weeklyWorkout[selectedDay]?.day || weekDays[selectedDay]}</h3>
                       <p className="text-wellness-green font-black uppercase text-[10px] tracking-widest mt-1">Foco: {plan.weeklyWorkout[selectedDay]?.focus || 'Descanso'}</p>
@@ -270,19 +276,19 @@ export default function Dashboard({
 
                 <div className="space-y-4">
                    {plan.weeklyWorkout[selectedDay]?.exercises.map((ex, i) => (
-                     <div key={i} className={`flex items-center justify-between p-6 rounded-[24px] border hover:border-wellness-green/30 group transition-all ${isLightMode ? 'bg-black/5 border-black/5' : 'bg-white/5 border-white/5'}`}>
-                        <div className="flex items-center gap-6">
-                           <span className={`text-2xl font-mono group-hover:text-wellness-green/40 transition-colors ${isLightMode ? 'text-black/10' : 'text-white/10'}`}>{(i+1).toString().padStart(2, '0')}</span>
-                           <h4 className={`font-bold text-lg ${isLightMode ? 'text-black' : 'text-white'}`}>{ex.name}</h4>
+                     <div key={i} className={`flex items-center justify-between p-3 md:p-6 rounded-[16px] md:rounded-[24px] border hover:border-wellness-green/30 group transition-all ${isLightMode ? 'bg-black/5 border-black/5' : 'bg-white/5 border-white/5'}`}>
+                        <div className="flex items-center gap-2 md:gap-6 min-w-0 flex-1">
+                           <span className={`text-base md:text-2xl font-mono shrink-0 group-hover:text-wellness-green/40 transition-colors ${isLightMode ? 'text-black/10' : 'text-white/10'}`}>{(i+1).toString().padStart(2, '0')}</span>
+                           <h4 className={`font-bold text-sm md:text-lg truncate ${isLightMode ? 'text-black' : 'text-white'}`}>{ex.name}</h4>
                         </div>
-                        <div className="flex gap-6">
-                           <div className="text-right min-w-[60px]">
-                              <span className={`text-[8px] font-black uppercase block mb-1 ${isLightMode ? 'text-black/20' : 'text-white/20'}`}>SÉRIES</span>
-                              <span className="text-xl font-mono text-wellness-green">{ex.sets}</span>
+                        <div className="flex gap-2 md:gap-6 shrink-0 ml-2">
+                           <div className="text-right min-w-[40px] md:min-w-[60px]">
+                              <span className={`text-[8px] font-black uppercase block mb-1 ${isLightMode ? 'text-black/20' : 'text-white/20'}`}>SÉR.</span>
+                              <span className="text-base md:text-xl font-mono text-wellness-green">{ex.sets}</span>
                            </div>
-                           <div className="text-right min-w-[60px]">
+                           <div className="text-right min-w-[40px] md:min-w-[60px]">
                               <span className={`text-[8px] font-black uppercase block mb-1 ${isLightMode ? 'text-black/20' : 'text-white/20'}`}>REPS</span>
-                              <span className={`text-xl font-mono ${isLightMode ? 'text-black' : 'text-white'}`}>{ex.reps}</span>
+                              <span className={`text-base md:text-xl font-mono ${isLightMode ? 'text-black' : 'text-white'}`}>{ex.reps}</span>
                            </div>
                         </div>
                      </div>
@@ -301,29 +307,29 @@ export default function Dashboard({
             key="agua"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="flex flex-col items-center py-10 space-y-12"
+            className="flex flex-col items-center py-6 md:py-10 space-y-8 md:space-y-12"
           >
-             <div className="relative w-80 h-80">
+             <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80">
                 <svg className={`absolute inset-0 w-full h-full rounded-full border-8 overflow-hidden ${isLightMode ? 'border-black/5 bg-black/5' : 'border-white/5 bg-white/5'}`} viewBox="0 0 100 100">
-                   <motion.rect 
-                     width="100" 
-                     height="100" 
-                     fill="#059669" 
+                   <motion.rect
+                     width="100"
+                     height="100"
+                     fill="#059669"
                      initial={{ y: 100 }}
                      animate={{ y: 100 - (Math.min(plan.waterTarget, waterDrunk) / plan.waterTarget) * 100 }}
                      transition={{ duration: 1, ease: "easeOut" }}
                    />
                 </svg>
-                
+
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                   <Droplets className={`w-10 h-10 mb-2 ${isLightMode ? 'text-wellness-green' : 'text-white'}`} />
-                   <div className={`text-7xl font-mono font-bold ${isLightMode ? 'text-black' : 'text-white'}`}>{waterDrunk}</div>
-                   <div className={`text-[10px] uppercase tracking-[0.4em] font-black ${isLightMode ? 'text-black/40' : 'text-white/60'}`}>ML / {plan.waterTarget}ML</div>
+                   <Droplets className={`w-7 h-7 md:w-10 md:h-10 mb-1 md:mb-2 ${isLightMode ? 'text-wellness-green' : 'text-white'}`} />
+                   <div className={`text-5xl md:text-7xl font-mono font-bold ${isLightMode ? 'text-black' : 'text-white'}`}>{waterDrunk}</div>
+                   <div className={`text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] font-black ${isLightMode ? 'text-black/40' : 'text-white/60'}`}>ML / {plan.waterTarget}ML</div>
                 </div>
              </div>
 
-             <div className="flex flex-col items-center gap-6">
-                <div className="flex flex-wrap justify-center gap-3 max-w-sm">
+             <div className="flex flex-col items-center gap-4 md:gap-6">
+                <div className="flex flex-wrap justify-center gap-2 md:gap-3 max-w-xs md:max-w-sm">
                    {Array.from({ length: Math.ceil(plan.waterTarget / 250) }).map((_, idx) => {
                       const isFilled = waterDrunk >= (idx + 1) * 250;
                       return (
@@ -348,27 +354,27 @@ export default function Dashboard({
                 </p>
              </div>
 
-             <div className="flex gap-4">
-                <button 
+             <div className="flex gap-3 md:gap-4 items-center">
+                <button
                   onClick={() => addWater(-500)}
-                  className="w-24 h-24 rounded-[32px] glass-card flex flex-col items-center justify-center hover:bg-white/10 transition-all border-white/5"
+                  className="w-20 h-20 md:w-24 md:h-24 rounded-[24px] md:rounded-[32px] glass-card flex flex-col items-center justify-center hover:bg-white/10 transition-all border-white/5"
                 >
-                  <Minus className={`w-6 h-6 mb-1 ${isLightMode ? 'text-black/30' : 'text-white/50'}`} />
-                  <span className={`text-[10px] font-black uppercase ${isLightMode ? 'text-black/20' : 'text-white/30'}`}>-500ml</span>
+                  <Minus className={`w-5 h-5 md:w-6 md:h-6 mb-1 ${isLightMode ? 'text-black/30' : 'text-white/50'}`} />
+                  <span className={`text-[9px] md:text-[10px] font-black uppercase ${isLightMode ? 'text-black/20' : 'text-white/30'}`}>-500ml</span>
                 </button>
-                <button 
+                <button
                    onClick={() => addWater(250)}
-                   className="w-32 h-32 rounded-[48px] bg-wellness-green text-black flex flex-col items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-[0_20px_50px_rgba(198,255,0,0.4)]"
+                   className="w-24 h-24 md:w-32 md:h-32 rounded-[32px] md:rounded-[48px] bg-wellness-green text-black flex flex-col items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-[0_20px_50px_rgba(198,255,0,0.4)]"
                 >
-                   <Plus className="w-10 h-10 mb-1" />
-                   <span className="text-[10px] font-black uppercase tracking-widest">BEBER</span>
+                   <Plus className="w-8 h-8 md:w-10 md:h-10 mb-1" />
+                   <span className="text-[9px] md:text-[10px] font-black uppercase tracking-widest">BEBER</span>
                 </button>
-                <button 
+                <button
                   onClick={() => addWater(500)}
-                  className="w-24 h-24 rounded-[32px] glass-card flex flex-col items-center justify-center hover:bg-white/10 transition-all border-white/5"
+                  className="w-20 h-20 md:w-24 md:h-24 rounded-[24px] md:rounded-[32px] glass-card flex flex-col items-center justify-center hover:bg-white/10 transition-all border-white/5"
                 >
-                   <Plus className={`w-6 h-6 mb-1 ${isLightMode ? 'text-black/30' : 'text-white/50'}`} />
-                   <span className={`text-[10px] font-black uppercase ${isLightMode ? 'text-black/20' : 'text-white/30'}`}>+500ml</span>
+                   <Plus className={`w-5 h-5 md:w-6 md:h-6 mb-1 ${isLightMode ? 'text-black/30' : 'text-white/50'}`} />
+                   <span className={`text-[9px] md:text-[10px] font-black uppercase ${isLightMode ? 'text-black/20' : 'text-white/30'}`}>+500ml</span>
                 </button>
              </div>
           </motion.div>
@@ -379,18 +385,18 @@ export default function Dashboard({
             animate={{ opacity: 1, y: 0 }}
             className="space-y-8"
           >
-            <div className="flex items-center gap-6 px-4">
-                <div className="w-20 h-20 rounded-[32px] bg-wellness-green flex items-center justify-center text-black">
-                   <User className="w-10 h-10" />
+            <div className="flex items-center gap-4 md:gap-6 px-2 md:px-4">
+                <div className="w-14 h-14 md:w-20 md:h-20 rounded-[24px] md:rounded-[32px] bg-wellness-green flex items-center justify-center text-black shrink-0">
+                   <User className="w-7 h-7 md:w-10 md:h-10" />
                 </div>
-                <div>
-                   <h2 className={`text-4xl font-bold tracking-tighter uppercase italic leading-none ${isLightMode ? 'text-black' : 'text-white'}`}>{userName}</h2>
+                <div className="min-w-0">
+                   <h2 className={`text-2xl md:text-4xl font-bold tracking-tighter uppercase italic leading-none truncate ${isLightMode ? 'text-black' : 'text-white'}`}>{userName}</h2>
                    <p className={`text-xs font-black uppercase tracking-widest mt-2 ${isLightMode ? 'text-black/20' : 'text-white/30'}`}>Protocolo de Performance: ID #{(Math.random() * 1000000).toFixed(0)}</p>
                 </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-               <div className={`glass-card p-10 rounded-[48px] space-y-8 ${isLightMode ? 'border-black/5' : 'border-white/5'}`}>
+               <div className={`glass-card p-5 md:p-10 rounded-[28px] md:rounded-[48px] space-y-6 md:space-y-8 ${isLightMode ? 'border-black/5' : 'border-white/5'}`}>
                   <h3 className={`text-xs font-black uppercase tracking-[0.3em] mb-6 ${isLightMode ? 'text-black/20' : 'text-white/20'}`}>Configurações de Bio-Scan</h3>
                   
                   <div className={`flex items-center justify-between p-6 rounded-[24px] ${isLightMode ? 'bg-black/5' : 'bg-white/5'}`}>
@@ -423,7 +429,7 @@ export default function Dashboard({
                   </div>
                </div>
 
-               <div className={`glass-card p-10 rounded-[48px] flex flex-col justify-between ${isLightMode ? 'border-black/5' : 'border-white/5'}`}>
+               <div className={`glass-card p-5 md:p-10 rounded-[28px] md:rounded-[48px] flex flex-col justify-between ${isLightMode ? 'border-black/5' : 'border-white/5'}`}>
                   <div className="space-y-6">
                      <h3 className={`text-xs font-black uppercase tracking-[0.3em] mb-6 ${isLightMode ? 'text-black/20' : 'text-white/20'}`}>Métricas de Bio-Análise</h3>
                      
@@ -460,7 +466,7 @@ export default function Dashboard({
             </div>
 
             {/* Nova Seção de Conta */}
-            <div className={`glass-card p-10 rounded-[48px] ${isLightMode ? 'border-black/5' : 'border-white/5'}`}>
+            <div className={`glass-card p-5 md:p-10 rounded-[28px] md:rounded-[48px] ${isLightMode ? 'border-black/5' : 'border-white/5'}`}>
                <h3 className={`text-xs font-black uppercase tracking-[0.3em] mb-6 ${isLightMode ? 'text-black/20' : 'text-white/20'}`}>Gerenciamento de Conta</h3>
                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                   <div className="flex items-center gap-4">
@@ -486,19 +492,19 @@ export default function Dashboard({
             </div>
 
              {/* Histórico Section */}
-             <div className={`pt-12 border-t space-y-8 mt-12 ${isLightMode ? 'border-black/5' : 'border-white/5'}`}>
-           <div className="flex items-center justify-between px-4">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-wellness-green/10 flex items-center justify-center text-wellness-green">
-                   <Calendar className="w-6 h-6" />
+             <div className={`pt-8 md:pt-12 border-t space-y-8 mt-8 md:mt-12 ${isLightMode ? 'border-black/5' : 'border-white/5'}`}>
+           <div className="flex items-center justify-between px-2 md:px-4">
+              <div className="flex items-center gap-3 md:gap-4">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-wellness-green/10 flex items-center justify-center text-wellness-green shrink-0">
+                   <Calendar className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
-                <h2 className={`text-3xl font-bold tracking-tighter uppercase italic ${isLightMode ? 'text-black' : 'text-white'}`}>Protocolos Arquivados</h2>
+                <h2 className={`text-xl md:text-3xl font-bold tracking-tighter uppercase italic ${isLightMode ? 'text-black' : 'text-white'}`}>Protocolos Arquivados</h2>
               </div>
               <span className={`text-[10px] font-black uppercase tracking-widest ${isLightMode ? 'text-black/20' : 'text-white/20'}`}>{history.length} SALVOS</span>
            </div>
 
            {history.length === 0 ? (
-             <div className={`glass-card p-20 rounded-[48px] border-dashed flex flex-col items-center justify-center text-center opacity-50 ${isLightMode ? 'border-black/10' : 'border-white/5'}`}>
+             <div className={`glass-card p-10 md:p-20 rounded-[28px] md:rounded-[48px] border-dashed flex flex-col items-center justify-center text-center opacity-50 ${isLightMode ? 'border-black/10' : 'border-white/5'}`}>
                 <div className={`w-16 h-16 rounded-full border flex items-center justify-center mb-6 ${isLightMode ? 'border-black/10' : 'border-white/10'}`}>
                    <Info className={`w-8 h-8 ${isLightMode ? 'text-black/20' : 'text-white/20'}`} />
                 </div>
@@ -552,7 +558,7 @@ export default function Dashboard({
     </AnimatePresence>
 
       {/* Tab Navigation at the bottom of page flow */}
-      <nav className={`w-full border-t mt-16 px-4 py-6 flex justify-center transition-all duration-300 ${isLightMode ? 'bg-white border-black/10' : 'bg-wellness-charcoal/30 border-white/5 rounded-[32px]'}`}>
+      <nav className={`w-full border-t mt-8 md:mt-16 px-2 md:px-4 py-4 md:py-6 flex justify-center transition-all duration-300 ${isLightMode ? 'bg-white border-black/10' : 'bg-wellness-charcoal/30 border-white/5 rounded-[24px] md:rounded-[32px]'}`}>
         <div className="flex justify-around items-center w-full max-w-lg gap-2">
           {tabs.map(tab => (
             <button

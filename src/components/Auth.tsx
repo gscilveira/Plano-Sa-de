@@ -60,9 +60,9 @@ export default function AuthScreen({ onAuth, isLightMode }: AuthProps) {
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className={`w-full max-w-md glass-card rounded-[48px] p-10 border-wellness-green/10 shadow-2xl ${isLightMode ? 'bg-white' : ''}`}
+        className={`w-full max-w-md glass-card rounded-[32px] md:rounded-[48px] p-6 md:p-10 border-wellness-green/10 shadow-2xl ${isLightMode ? 'bg-white' : ''}`}
       >
-        <div className="text-center mb-10">
+        <div className="text-center mb-6 md:mb-10">
           <div className="w-16 h-16 rounded-2xl bg-wellness-green/10 flex items-center justify-center mx-auto mb-4 border border-wellness-green/20">
             <Fingerprint className="text-wellness-green w-8 h-8" />
           </div>
