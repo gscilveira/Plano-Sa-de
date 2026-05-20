@@ -100,7 +100,7 @@ export default function Dashboard({
     <div className={`space-y-8 ${isLightMode ? 'text-black' : 'text-white'}`}>
       <AnimatePresence mode="wait">
         {/* RESUMO */}
-        {activeTab === 'resumo' && (
+        {activeTab === 'resumo' ? (
           <motion.div
             key="resumo"
             initial={{ opacity: 0, scale: 0.98 }}
@@ -175,10 +175,7 @@ export default function Dashboard({
                ))}
             </div>
           </motion.div>
-        )}
-
-        {/* DIETA */}
-        {activeTab === 'dieta' && (
+        ) : activeTab === 'dieta' ? (
           <motion.div
             key="dieta"
             initial={{ opacity: 0, y: 20 }}
@@ -212,10 +209,7 @@ export default function Dashboard({
                ))}
             </div>
           </motion.div>
-        )}
-
-        {/* TREINO */}
-        {activeTab === 'treino' && (
+        ) : activeTab === 'treino' ? (
           <motion.div
             key="treino"
             initial={{ opacity: 0, y: 20 }}
@@ -302,10 +296,7 @@ export default function Dashboard({
                 </div>
             </div>
           </motion.div>
-        )}
-
-        {/* AGUA */}
-        {activeTab === 'agua' && (
+        ) : activeTab === 'agua' ? (
           <motion.div
             key="agua"
             initial={{ opacity: 0, scale: 0.95 }}
@@ -381,10 +372,7 @@ export default function Dashboard({
                 </button>
              </div>
           </motion.div>
-        )}
-
-        {/* PERFIL */}
-        {activeTab === 'perfil' && (
+        ) : (
           <motion.div
             key="perfil"
             initial={{ opacity: 0, y: 20 }}
