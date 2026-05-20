@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import { Activity, Mail, Lock, User, ChevronRight, Fingerprint } from "lucide-react";
 
 interface AuthProps {
@@ -80,28 +80,25 @@ export default function AuthScreen({ onAuth, isLightMode }: AuthProps) {
               {error}
             </div>
           )}
-          <AnimatePresence mode="wait">
-            {!isLogin && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="space-y-2"
-              >
-                <div className="relative">
-                  <User className="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 text-wellness-green" />
-                  <input
-                    required
-                    type="text"
-                    placeholder="NOME DE USUÁRIO"
-                    className={`w-full bg-black/5 ${isLightMode ? 'border-black/5' : 'border-white/5'} border rounded-3xl py-5 pl-14 pr-6 text-xs font-bold tracking-widest focus:border-wellness-green outline-none transition-all`}
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  />
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          {!isLogin && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              className="space-y-2 overflow-hidden"
+            >
+              <div className="relative">
+                <User className="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 text-wellness-green" />
+                <input
+                  required
+                  type="text"
+                  placeholder="NOME DE USUÁRIO"
+                  className={`w-full bg-black/5 ${isLightMode ? 'border-black/5' : 'border-white/5'} border rounded-3xl py-5 pl-14 pr-6 text-xs font-bold tracking-widest focus:border-wellness-green outline-none transition-all`}
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                />
+              </div>
+            </motion.div>
+          )}
 
           <div className="space-y-2">
             <div className="relative">

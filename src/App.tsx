@@ -119,7 +119,7 @@ export default function App() {
 
       <Layout isLightMode={isLightMode}>
         <AnimatePresence mode="wait">
-          {!isAuthenticated ? (
+          {!isAuthenticated && (
             <motion.div
               key="auth"
               initial={{ opacity: 0 }}
@@ -128,7 +128,9 @@ export default function App() {
             >
               <AuthScreen onAuth={handleAuth} isLightMode={isLightMode} />
             </motion.div>
-          ) : !plan ? (
+          )}
+
+          {isAuthenticated && !plan && (
             <motion.div
               key="form"
               initial={{ opacity: 0 }}
@@ -157,11 +159,14 @@ export default function App() {
               
               <OnboardingForm onSubmit={handleSubmit} loading={loading} isLightMode={isLightMode} />
             </motion.div>
-          ) : (
+          )}
+
+          {isAuthenticated && plan && (
             <motion.div
               key="dashboard"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
             >
               <Dashboard 
                 plan={plan} 
